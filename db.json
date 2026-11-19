@@ -1,0 +1,32 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "sobrenome": "Netflix",
+      "cpf": "000.000.000-00",
+      "email": "admin@netflix.com",
+      "senha": "123",
+      "rua": "Av. Paulista, 1000",
+      "cep": "01310-100",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "telefone": "(11) 99999-9999",
+      "tipo": "admin"
+    },
+    {
+      "id": 2,
+      "nome": "Assinante",
+      "sobrenome": "Padrão",
+      "cpf": "111.111.111-11",
+      "email": "user@netflix.com",
+      "senha": "123",
+      "rua": "Rua Central, 250",
+      "cep": "08710-000",
+      "cidade": "Mogi das Cruzes",
+      "estado": "SP",
+      "telefone": "(11) 98888-8888",
+      "tipo": "usuario"
+    }
+  ]
+}

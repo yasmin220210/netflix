@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image: none !important; background-color: #141414 !important; display: block !important; }
+    .hero { position: relative; height: 52vh; min-height: 340px; background: linear-gradient(to right, rgba(20,20,20,0.95) 20%, rgba(20,20,20,0.25) 70%), linear-gradient(to top, #141414 5%, transparent 45%), url('https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg') center/cover no-repeat; display: flex; align-items: center; padding: 0 4%; }
+    .grid-filmes { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 22px; }
+    .quadrado { background-color: #181818; border-radius: 6px; overflow: hidden; text-align: center; border: 1px solid #262626; transition: transform 0.3s ease, border-color 0.3s ease; cursor: pointer; }
+    .quadrado:hover { transform: scale(1.05); border-color: #e50914; }
+    .quadrado img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    .quadrado p { padding: 14px 12px; font-weight: 700; font-size: 0.98rem; color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="boas_vindas.html" class="logo">NETFLIX</a>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span id="nomeUsuario" style="font-weight: 600;"></span>
+      <a id="btn-ir-admin" href="admin.html" class="btn" style="display: none; width: auto; height: 38px; padding: 0 16px; margin: 0; background: #333; align-items: center;">Painel Admin</a>
+      <button onclick="sair()" style="width: auto; height: 38px; padding: 0 18px; margin: 0;">Sair</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div style="max-width: 540px;">
+      <span style="background: #e50914; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 3px;">TOP 1 HOJE</span>
+      <h2 style="font-size: 2.8rem; margin: 12px 0;">Stranger Things</h2>
+      <p style="color: #d2d2d2;">Quando um garoto desaparece, uma pequena cidade descobre um mistério envolvendo experimentos secretos e forças sobrenaturais.</p>
+    </div>
+  </section>
+
+  <section style="padding: 20px 4% 50px;">
+    <h2 style="font-size: 1.4rem; margin-bottom: 18px;">Populares na Netflix</h2>
+    <div class="grid-filmes" id="listaFilmes"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

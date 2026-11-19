@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Painel Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image: none !important; background-color: #141414 !important; display: block !important; }
+    .admin-wrapper { max-width: 1320px; margin: 0 auto; padding: 30px 20px 60px; }
+    .admin-card { background: #181818; border: 1px solid #2a2a2a; border-radius: 8px; padding: 28px; margin-bottom: 35px; overflow-x: auto; }
+    .form-grid-admin { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: center; }
+    .form-grid-admin input, .form-grid-admin select { margin-bottom: 0; height: 50px; background: #262626; color: #fff; border: 1px solid #404040; border-radius: 4px; padding: 0 14px; }
+    .form-grid-admin button { margin-top: 0; height: 50px; grid-column: span 2; }
+    @media (max-width: 900px) { .form-grid-admin { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .form-grid-admin { grid-template-columns: 1fr; } .form-grid-admin button { grid-column: span 1; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="admin.html" class="logo">NETFLIX <span style="font-size: 1rem; color: #fff; font-family: Inter, sans-serif; letter-spacing: 0;">ADMIN</span></a>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span id="admin-nome" style="color: #b3b3b3; font-size: 0.95rem;"></span>
+      <a href="boas_vindas.html" class="btn" style="width: auto; height: 38px; padding: 0 16px; margin: 0; background: #333; display: inline-flex; align-items: center;">Ver Catálogo</a>
+      <button onclick="sair()" style="width: auto; height: 38px; padding: 0 18px; margin: 0;">Sair</button>
+    </div>
+  </header>
+
+  <div class="admin-wrapper">
+    <div class="admin-card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 18px;">Cadastrar Novo Usuário</h2>
+      <form id="form-add-usuario" class="form-grid-admin">
+        <input type="text" id="novo-nome" placeholder="Nome" required>
+        <input type="text" id="novo-sobrenome" placeholder="Sobrenome" required>
+        <input type="text" id="novo-cpf" placeholder="CPF" required>
+        <input type="tel" id="novo-telefone" placeholder="Telefone" required>
+        <input type="email" id="novo-email" placeholder="E-mail" required>
+        <input type="password" id="novo-senha" placeholder="Senha" required>
+        <input type="text" id="novo-cep" placeholder="CEP" required>
+        <input type="text" id="novo-rua" placeholder="Rua e número" required>
+        <input type="text" id="novo-cidade" placeholder="Cidade" required>
+        <input type="text" id="novo-estado" placeholder="Estado (UF)" maxlength="2" required>
+        <select id="novo-tipo">
+          <option value="usuario">Assinante</option>
+          <option value="admin">Administrador</option>
+        </select>
+        <button type="submit">+ Cadastrar</button>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 10px;">Usuários Cadastrados (db.json)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome Completo</th>
+            <th>CPF</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Perfil</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-usuarios"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

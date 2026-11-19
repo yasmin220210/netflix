@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --netflix-red: #E50914;
+  --netflix-red-hover: #c11119;
+  --bg-dark: #000000;
+  --bg-surface: #141414;
+  --bg-card: #181818;
+  --text-main: #ffffff;
+  --text-muted: #b3b3b3;
+  --text-dim: #737373;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  /* Fundo cinematográfico escuro estilo mosaico de filmes/séries */
+  background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.92) 100%),
+    radial-gradient(circle at center, rgba(229, 9, 20, 0.08) 0%, rgba(0, 0, 0, 0.85) 100%),
+    url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   CABEÇALHO E LOGO OFICIAL NETFLIX
+   ========================================= */
+header, .navbar {
+  width: 100%;
+  padding: 22px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 10%, transparent 100%);
+  position: relative;
+  z-index: 10;
+}
+
+header h1, .logo {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--netflix-red);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+header a:not(.logo), nav a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: 22px;
+  transition: color 0.2s ease;
+}
+
+header a:not(.logo):hover, nav a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   CAIXA DE LOGIN E CADASTRO
+   ========================================= */
+main, .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.login-box, .form-container, main .card {
+  background-color: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 56px 64px 48px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card form, .login-box form, .form-container form {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
+
+/* =========================================
+   INPUTS ESTILO NETFLIX
+   ========================================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  background-color: rgba(22, 22, 22, 0.85);
+  border: 1px solid rgba(128, 128, 128, 0.6);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: #8c8c8c;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ffffff;
+  background-color: rgba(35, 35, 35, 0.95);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   BOTÃO VERMELHO NETFLIX
+   ========================================= */
+button, .btn, input[type="submit"] {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  background-color: var(--netflix-red);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+  background-color: var(--netflix-red-hover);
+}
+
+button:active, .btn:active {
+  transform: scale(0.99);
+}
+
+/* =========================================
+   OPÇÕES DO FORMULÁRIO ("Lembre-se de mim" / "Assine agora")
+   ========================================= */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #737373;
+  cursor: pointer;
+}
+
+.help-link {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.signup-now {
+  margin-top: 36px;
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+.signup-now a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.signup-now a:hover {
+  text-decoration: underline;
+}
+
+.recaptcha-text {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: #8c8c8c;
+  line-height: 1.4;
+}
+
+/* =========================================
+   CATÁLOGO DE FILMES/SÉRIES E PAINEL ADMIN
+   ========================================= */
+#lista-produtos, .catalogo, .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1240px;
+  margin-top: 24px;
+}
+
+#lista-produtos .card, .catalogo .card, .grid .card {
+  background-color: var(--bg-card);
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #262626;
+  max-width: 100%;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease;
+}
+
+#lista-produtos .card:hover, .catalogo .card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.95);
+  z-index: 10;
+  border-color: var(--netflix-red);
+}
+
+#lista-produtos .card img, .catalogo .card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background-color: rgba(20, 20, 20, 0.94);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #262626;
+}
+
+th {
+  background-color: #0d0d0d;
+  color: var(--netflix-red);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.8px;
+}
+
+/* =========================================
+   RODAPÉ E RESPONSIVIDADE
+   ========================================= */
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid #222;
+  padding: 26px 4%;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: none;
+    background-color: #000000;
+  }
+
+  .logo {
+    font-size: 2.3rem;
+  }
+
+  .login-box, .form-container, main .card {
+    padding: 24px 16px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
